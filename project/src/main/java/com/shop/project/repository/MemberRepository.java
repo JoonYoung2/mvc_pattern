@@ -1,0 +1,15 @@
+package com.shop.project.repository;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.shop.project.dto.MemberDTO;
+
+@Mapper
+public interface MemberRepository {
+
+	void memberInsert(MemberDTO member);
+
+	MemberDTO selectInfo(String user_id);
+
+
+}

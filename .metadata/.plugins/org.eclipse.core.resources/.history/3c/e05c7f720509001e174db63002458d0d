@@ -1,0 +1,5 @@
+package com.shop.project.repository;
+
+public interface MemberRepository {
+
+}

@@ -1,0 +1,46 @@
+package com.shop.project.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.shop.project.dto.MemberDTO;
+import com.shop.project.service.MemberService;
+
+@Controller
+public class MemberController {
+	
+	@Autowired
+	private MemberService service;
+	
+	@GetMapping("/")
+	public String home() {
+		return "index";
+	}
+	
+	@GetMapping("/login")
+	public String login() {
+		return "login";
+	}
+	
+	@GetMapping("/join")
+	public String join() {
+		
+		return "join";
+	}
+	
+	@PostMapping("/join.do")
+	public String join(MemberDTO member) {
+		service.memberInsert(member);
+		return "login";
+	}
+	@GetMapping("/getUser")
+	public String getUser(@RequestParam("user_id") String a, Model get_user) {
+		
+		
+	return "userInfo";
+	}	
+}

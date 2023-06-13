@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.shop.project.repository.MemberRepository">
+    <insert id="memberInsert" parameterType="com.shop.project.dto.MemberDTO">
+    	INSERT INTO member_info VALUES(#{user_id}, #{user_pw}, #{user_email}, #{user_name})
+    </insert>
+    <select id="selectInfo" resultType="com.shop.project.dto.MemberDTO">
+    	SELECT * FROM member_info WHERE user_id=#{user_id}
+    </select>
+</mapper>
